@@ -1,0 +1,14 @@
+- Create a Trello Board for the following
+    - Project Board => For Features/Roadmap/Versions for Mood Radio project
+    - Frontend Board => For UI/UX Designs, Tasks, Review, Validation
+        - Mark up todos as tasks
+        - Design tasks for LibraryItems for Playlists, Artists, Albums, Discographies, Stations
+    - Backend Board => Designs, Tasks, Review, Validation
+        - Mood App Service => For Backend Designs
+        - Spotify Service => For Backend Designs
+            - Consider on doing Apple Music and Amazon Music as well?
+        - OpenAI Service => For AI Designs
+        - Prism Service => For AI Designs for OpenAI replacement
+    - UNRELATED BUT NEEDED:
+        - FotF Project => To keep track of Ideas that can be 
+        - Prism Project => For UI/UX Designs 

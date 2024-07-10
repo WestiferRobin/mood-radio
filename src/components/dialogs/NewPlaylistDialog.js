@@ -15,14 +15,12 @@ const NewPlaylistDialog = ({handleDialog, open = false}) => {
     const [playlistName, setPlaylistName] = useState("");
 
     const handleCreatePlaylist = () => {
-        alert("works: " + playlistName);
+        handleDialog(playlistName);
         setPlaylistName("");
-        handleDialog(false);
     };
 
     const handleCancel = () => {
         setPlaylistName("");
-        handleDialog(false);
     }
 
     const renderTitle = () => {

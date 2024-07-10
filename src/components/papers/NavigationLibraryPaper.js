@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import {
   Paper, 
   Typography, 
@@ -11,10 +11,24 @@ import AddIcon from '@mui/icons-material/Add';
 import NewPlaylistDialog from '../dialogs/NewPlaylistDialog';
 
 const NavigationLibraryPaper = ({paperColor}) => {
+    // TODO: consider design for AI Artists and Albums later on
     const [newPlaylistOpen, setNewPlaylistOpen] = useState(false);
 
-    return <Paper square={false} style={{height: "11.5%", backgroundColor: paperColor}}>
-        <Toolbar>
+    // TODO: create an endpoint to get a user's playlist
+    const [libraryItems, setLibraryItems] = useState([]);
+
+    // TODO: Needs to be refactored when Cards for LibraryItems become more of a thing (checkout )
+    const addPlaylist = useCallback((playlistName) => {
+        setLibraryItems([...libraryItems, playlistName]);
+        setNewPlaylistOpen(false);
+    }, [setLibraryItems, libraryItems]);
+
+    const renderDialog = () => {
+        return (<NewPlaylistDialog open={newPlaylistOpen} handleDialog={addPlaylist} />);
+    };
+
+    const renderMainToolbar = () => {
+        return <Toolbar>
             <AutoAwesomeMotionIcon 
                 size="large"
                 edge="start"
@@ -29,10 +43,35 @@ const NavigationLibraryPaper = ({paperColor}) => {
                 <IconButton color='inherit' onClick={() => setNewPlaylistOpen(true)}>
                 <AddIcon />
                 </IconButton>
+                {/* TODO: Implement exapand all feature (aka look at the arrow in spotify)*/}
             </Tooltip>
         </Toolbar>
-        <NewPlaylistDialog open={newPlaylistOpen} handleDialog={setNewPlaylistOpen} />
-    </Paper>
+    }
+
+    const renderLibraryFilters = () => {
+        // TODO: add the stuff
+    }
+
+    const renderSearchToolbar = () => {
+        // TODO: Add search bar, sort by, and view by components... consider making render functions per each
+    }
+
+    // TODO: Make LibraryItems for Playlists, Artists, Albums, Discographies, Stations
+    const renderLibraryItems = () => {
+        return <div>
+            {renderSearchToolbar()}
+            <div>
+                {libraryItems.map((name) => <div>{name}</div>)}
+            </div>
+        </div>
+    };
+
+    return <Paper square={false} style={{height: "25.5%", backgroundColor: paperColor}}>
+        {renderDialog()}
+        {renderMainToolbar()}
+        {renderLibraryFilters()}
+        {renderLibraryItems()}
+    </Paper>;
 };
 
 export default NavigationLibraryPaper;

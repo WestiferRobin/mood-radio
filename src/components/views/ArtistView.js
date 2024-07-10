@@ -1,0 +1,1 @@
+// TODO: Implement ArtistView like in Spotify's main page
