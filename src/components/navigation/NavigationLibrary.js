@@ -5,12 +5,13 @@ import {
   Toolbar, 
   IconButton, 
   Tooltip,
+  Box,
 } from '@mui/material';
 import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotion';
 import AddIcon from '@mui/icons-material/Add';
 import NewPlaylistDialog from '../dialogs/NewPlaylistDialog';
 
-const NavigationLibraryPaper = ({paperColor}) => {
+const NavigationLibrary = ({paperColor}) => {
     // TODO: consider design for AI Artists and Albums later on
     const [newPlaylistOpen, setNewPlaylistOpen] = useState(false);
 
@@ -58,15 +59,22 @@ const NavigationLibraryPaper = ({paperColor}) => {
 
     // TODO: Make LibraryItems for Playlists, Artists, Albums, Discographies, Stations
     const renderLibraryItems = () => {
-        return <div>
+        return <Box
+            sx={{ 
+                height: "66.5vh",  // Adjust the height as needed
+                overflowY: 'scroll',
+                // padding: 2,
+                borderRadius: 1
+            }}
+        >
             {renderSearchToolbar()}
-            <div>
+            <div style={{backgroundColor: "red"}}>
                 {libraryItems.map((name) => <div>{name}</div>)}
             </div>
-        </div>
+        </Box>
     };
 
-    return <Paper square={false} style={{height: "25.5%", backgroundColor: paperColor}}>
+    return <Paper square={false} style={{height: "83%", backgroundColor: paperColor}}>
         {renderDialog()}
         {renderMainToolbar()}
         {renderLibraryFilters()}
@@ -74,5 +82,5 @@ const NavigationLibraryPaper = ({paperColor}) => {
     </Paper>;
 };
 
-export default NavigationLibraryPaper;
+export default NavigationLibrary;
 

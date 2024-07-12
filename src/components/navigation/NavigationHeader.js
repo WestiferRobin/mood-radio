@@ -2,7 +2,7 @@ import { Typography, Paper, Button, Stack } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 
-const NavigationHeaderPaper = ({paperColor, paddingSize}) => {
+const NavigationHeader = ({paperColor, paddingSize}) => {
     const navigationButtonColor = "white";
 
     return (
@@ -25,5 +25,5 @@ const NavigationHeaderPaper = ({paperColor, paddingSize}) => {
   );
 };
 
-export default NavigationHeaderPaper;
+export default NavigationHeader;
 
