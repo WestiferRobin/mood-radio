@@ -1,3 +1,8 @@
+- Finish Navigation Paper
+- Validate PC and Mac => UI breaks on each
+- Validate dynamic sizes => Mess with windows on Spotify WebApp
+- Implement Security => Driven by backend
+- Setup Unit, Integration, and maybe Acceptance Tests
 - Create a Trello Board for the following
     - Project Board => For Features/Roadmap/Versions for Mood Radio project
     - Frontend Board => For UI/UX Designs, Tasks, Review, Validation
