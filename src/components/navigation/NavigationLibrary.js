@@ -11,12 +11,63 @@ import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotion';
 import AddIcon from '@mui/icons-material/Add';
 import NewPlaylistDialog from '../dialogs/NewPlaylistDialog';
 
+const debugLibraryData = [
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+    "ASDF",
+];
+
 const NavigationLibrary = ({paperColor}) => {
     // TODO: consider design for AI Artists and Albums later on
     const [newPlaylistOpen, setNewPlaylistOpen] = useState(false);
 
     // TODO: create an endpoint to get a user's playlist
-    const [libraryItems, setLibraryItems] = useState([]);
+    const [libraryItems, setLibraryItems] = useState(debugLibraryData);
 
     // TODO: Needs to be refactored when Cards for LibraryItems become more of a thing (checkout )
     const addPlaylist = useCallback((playlistName) => {
@@ -24,8 +75,16 @@ const NavigationLibrary = ({paperColor}) => {
         setNewPlaylistOpen(false);
     }, [setLibraryItems, libraryItems]);
 
+    const dialogCancel = useCallback(() => {
+        setNewPlaylistOpen(false);
+    }, [setNewPlaylistOpen]);
+
     const renderDialog = () => {
-        return (<NewPlaylistDialog open={newPlaylistOpen} handleDialog={addPlaylist} />);
+        return <NewPlaylistDialog 
+            open={newPlaylistOpen} 
+            handleConfirm={addPlaylist} 
+            handleCancel={dialogCancel} 
+        />;
     };
 
     const renderMainToolbar = () => {
@@ -61,9 +120,9 @@ const NavigationLibrary = ({paperColor}) => {
     const renderLibraryItems = () => {
         return <Box
             sx={{ 
-                height: "66.5vh",  // Adjust the height as needed
+                height: "70vh",  // Adjust the height as needed
                 overflowY: 'scroll',
-                // padding: 2,
+                backgroundColor: "red",
                 borderRadius: 1
             }}
         >
@@ -74,7 +133,7 @@ const NavigationLibrary = ({paperColor}) => {
         </Box>
     };
 
-    return <Paper square={false} style={{height: "83%", backgroundColor: paperColor}}>
+    return <Paper square={false} style={{height: "89%", backgroundColor: paperColor}}>
         {renderDialog()}
         {renderMainToolbar()}
         {renderLibraryFilters()}

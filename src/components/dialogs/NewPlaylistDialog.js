@@ -9,17 +9,18 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 
-const NewPlaylistDialog = ({handleDialog, open = false}) => {
+const NewPlaylistDialog = ({handleConfirm, handleCancel, open = false}) => {
     const backgroundColor = "black";
 
     const [playlistName, setPlaylistName] = useState("");
 
     const handleCreatePlaylist = () => {
-        handleDialog(playlistName);
+        handleConfirm(playlistName);
         setPlaylistName("");
     };
 
-    const handleCancel = () => {
+    const handleConfirmCancel = () => {
+        handleCancel();
         setPlaylistName("");
     }
 
@@ -33,10 +34,7 @@ const NewPlaylistDialog = ({handleDialog, open = false}) => {
     }
 
     return (
-        <Dialog
-            open={open}
-            onClose={handleCancel}
-        >
+        <Dialog open={open}>
             <DialogTitle style={{backgroundColor: backgroundColor}}>{renderTitle()}</DialogTitle>
             <DialogContent style={{backgroundColor: backgroundColor}} noValidate>
                 <DialogContentText sx={{mb: 2}}>
@@ -45,10 +43,7 @@ const NewPlaylistDialog = ({handleDialog, open = false}) => {
                 </DialogContentText>
                 <TextField
                     margin="dense"
-                    id="new-playlist"
-                    name="new-playlist"
                     label="Playlist Name"
-                    type="new-playlist"
                     fullWidth
                     variant="outlined"
                     onChange={(event) => setPlaylistName(event.target.value)}
@@ -85,7 +80,7 @@ const NewPlaylistDialog = ({handleDialog, open = false}) => {
                 <Button variant="contained" onClick={handleCreatePlaylist}>
                     Create
                 </Button>
-                <Button variant="outlined" onClick={handleCancel}>
+                <Button variant="outlined" onClick={handleConfirmCancel}>
                     Cancel
                 </Button>
             </DialogActions>

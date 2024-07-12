@@ -8,7 +8,7 @@ import "./App.css";
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App" style={{backgroundColor: "lime", height: "100vh", width: "100vw"}}>
+      <div className="App" style={{height: "100vh", width: "100vw", backgroundColor: "red"}}>
         <MainView />
         <Player />
       </div>
