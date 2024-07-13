@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { testId, testLibraryData } from '../constants';
 
+// TODO: Refactor useMoodApi to be useUserApi, useLibraryApi
 const useMoodApi = () => {
     const [user, setUser] = useState(null);
     const [userLibrary, setUserLibrary] = useState(testLibraryData);
