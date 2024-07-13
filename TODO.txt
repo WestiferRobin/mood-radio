@@ -7,7 +7,7 @@
     - Project Board => For Features/Roadmap/Versions for Mood Radio project
     - Frontend Board => For UI/UX Designs, Tasks, Review, Validation
         - Mark up todos as tasks
-        - Design tasks for LibraryItems for Playlists, Artists, Albums, Discographies, Stations
+        - Design tasks for LibraryItems for Playlists, Artists, Albums, Discographies, Generas
     - Backend Board => Designs, Tasks, Review, Validation
         - Mood App Service => For Backend Designs
         - Spotify Service => For Backend Designs

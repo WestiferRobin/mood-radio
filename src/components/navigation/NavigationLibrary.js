@@ -10,70 +10,21 @@ import {
 import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotion';
 import AddIcon from '@mui/icons-material/Add';
 import NewPlaylistDialog from '../dialogs/NewPlaylistDialog';
-
-const debugLibraryData = [
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-    "ASDF",
-];
+import useMoodApi from '../../hooks/useMoodApi';
 
 const NavigationLibrary = ({paperColor}) => {
     // TODO: consider design for AI Artists and Albums later on
     const [newPlaylistOpen, setNewPlaylistOpen] = useState(false);
 
     // TODO: create an endpoint to get a user's playlist
-    const [libraryItems, setLibraryItems] = useState(debugLibraryData);
+    const { userLibrary } = useMoodApi();
 
-    // TODO: Needs to be refactored when Cards for LibraryItems become more of a thing (checkout )
+    // TODO: Need to create an update request when a playlist is suggested.. consider doing this on the child component
     const addPlaylist = useCallback((playlistName) => {
-        setLibraryItems([...libraryItems, playlistName]);
+        // setLibraryItems([...userLibrary, playlistName]); => TODO: Fix this shit with backend
+        alert(`added playlist ${playlistName}`);
         setNewPlaylistOpen(false);
-    }, [setLibraryItems, libraryItems]);
+    }, [userLibrary]);
 
     const dialogCancel = useCallback(() => {
         setNewPlaylistOpen(false);
@@ -116,7 +67,14 @@ const NavigationLibrary = ({paperColor}) => {
         // TODO: Add search bar, sort by, and view by components... consider making render functions per each
     }
 
-    // TODO: Make LibraryItems for Playlists, Artists, Albums, Discographies, Stations
+    const renderLibraryCards = () => {
+        // TODO: Needs to be refactored when Cards for LibraryItems become more of a thing (checkout )
+        return  <div style={{backgroundColor: "red"}}>
+            {userLibrary.map((name) => <div>{name}</div>)}
+        </div>;
+    };
+
+    // TODO: Make LibraryItems for Playlists, Artists, Albums, Discographies first and Generas later
     const renderLibraryItems = () => {
         return <Box
             sx={{ 
@@ -127,9 +85,7 @@ const NavigationLibrary = ({paperColor}) => {
             }}
         >
             {renderSearchToolbar()}
-            <div style={{backgroundColor: "red"}}>
-                {libraryItems.map((name) => <div>{name}</div>)}
-            </div>
+            {renderLibraryCards()}
         </Box>
     };
 

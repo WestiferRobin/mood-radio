@@ -10,7 +10,7 @@ const MainView = () => {
   const paperColor = "grey";
   const paddingSize = 10;
 
-  const { username } = useMoodApi();
+  const { user } = useMoodApi();
 
   return (
     <Grid container style={{height: "94.1vh", backgroundColor: backgroundColor}}>
@@ -19,7 +19,7 @@ const MainView = () => {
       </Grid>
       <Grid item xs={7.3} style={{ padding: paddingSize, paddingLeft: paddingSize / 2, paddingRight: paddingSize / 2}}>
         <Paper square={false} style={{height: "100%", backgroundColor: paperColor}}>
-          { username }
+          { user === null ? "Not Found or Loading" : `Hello ${user.username}!` }
         </Paper>
       </Grid>
       <Grid item xs={2.35} style={{padding: paddingSize, paddingLeft: paddingSize / 2}}>
