@@ -10,7 +10,7 @@ import {
 import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotion';
 import AddIcon from '@mui/icons-material/Add';
 import NewPlaylistDialog from '../dialogs/NewPlaylistDialog';
-import useMoodApi from '../../hooks/useMoodApi';
+import useMoodApi from '../../hooks/mood-library-hooks/useMoodApi';
 
 const NavigationLibrary = ({paperColor}) => {
     // TODO: consider design for AI Artists and Albums later on

@@ -3,7 +3,8 @@ import {
   Paper
 } from '@mui/material';
 import NavigationPaper from '../papers/NavigationPaper';
-import useMoodApi from "../../hooks/useMoodApi";
+import useMoodApi from '../../hooks/mood-library-hooks/useMoodApi';
+import useSearchApi from '../../hooks/mood-library-hooks/useSearchApi';
 
 const MainView = () => {
   const backgroundColor = "black";
@@ -11,6 +12,7 @@ const MainView = () => {
   const paddingSize = 10;
 
   const { user } = useMoodApi();
+  const { artists } = useSearchApi();
 
   return (
     <Grid container style={{height: "94.1vh", backgroundColor: backgroundColor}}>
@@ -20,6 +22,7 @@ const MainView = () => {
       <Grid item xs={7.3} style={{ padding: paddingSize, paddingLeft: paddingSize / 2, paddingRight: paddingSize / 2}}>
         <Paper square={false} style={{height: "100%", backgroundColor: paperColor}}>
           { user === null ? "Not Found or Loading" : `Hello ${user.username}!` }
+          { artists.map((value) => <div>{value.name}</div>)}
         </Paper>
       </Grid>
       <Grid item xs={2.35} style={{padding: paddingSize, paddingLeft: paddingSize / 2}}>

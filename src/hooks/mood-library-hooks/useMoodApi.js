@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { testId, testLibraryData } from '../../constants';
 
-// TODO: Refactor useMoodApi to be useUserApi, useLibraryApi
+// TODO: Refactor useMoodApi micro-services
+// NOTE: the backend is using microservices so refactor for mood-library, mood-user, and platform-user
 const useMoodApi = () => {
     const [user, setUser] = useState(null);
     const [userLibrary, setUserLibrary] = useState(testLibraryData);
