@@ -7,7 +7,7 @@ import "./App.css";
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App" style={{backgroundColor: "red"}}>
+      <div className="App">
         <MainView />
       </div>
     </ThemeProvider>
