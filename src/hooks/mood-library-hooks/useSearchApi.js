@@ -8,6 +8,12 @@ const useSearchApi = () => {
         // const response = await axios.get('search/artists');
         // const data = response.data;
         // setArtists(data);
+        const asdf = [];
+        for (let index = 0; index < 100; index += 1)
+        {
+            asdf.push({name: `artist ${index}`});
+        }
+        setArtists(asdf);
     };
 
     useEffect(() => {
