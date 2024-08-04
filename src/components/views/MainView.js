@@ -16,8 +16,8 @@ const MainView = () => {
   const { user } = useMoodApi();
   const { artists } = useSearchApi();
 
-  return (<>
-    <Grid container style={{backgroundColor: backgroundColor, height: "20vh"}}>
+  return <Box>
+    <Grid container style={{backgroundColor: backgroundColor, height: "94vh"}}>
       <Grid item xs={2.35} style={{ padding: paddingSize, paddingRight: paddingSize / 2, paddingLeft: paddingSize}}>
         {/* <NavigationPaper paperColor={paperColor} paddingSize={paddingSize} height={"94%"} /> */}
       </Grid>
@@ -32,10 +32,8 @@ const MainView = () => {
         </Paper> */}
       </Grid>
     </Grid>
-    {/* <Box>
-      <Player />
-    </Box> */}
-  </>);
+    <Player />
+  </Box>;
 };
 
 export default MainView;
