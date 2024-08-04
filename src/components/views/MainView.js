@@ -15,7 +15,7 @@ const MainView = () => {
   const { artists } = useSearchApi();
 
   return (
-    <Grid container style={{height: "92.5%", backgroundColor: backgroundColor}}>
+    <Grid container style={{height: "94.5%", backgroundColor: backgroundColor}}>
       {/* <Grid item xs={2.35} style={{ padding: paddingSize, paddingRight: paddingSize / 2, paddingLeft: paddingSize}}>
         <NavigationPaper paperColor={paperColor} paddingSize={paddingSize} height={"94%"} />
       </Grid>
