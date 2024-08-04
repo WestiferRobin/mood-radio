@@ -7,7 +7,7 @@ import {
   Button,
   // Slider
 } from '@mui/material';
-// import NavigationPaper from '../papers/NavigationPaper';
+import NavigationPaper from '../papers/NavigationPaper';
 import useMoodApi from '../../hooks/mood-library-hooks/useMoodApi';
 import useSearchApi from '../../hooks/mood-library-hooks/useSearchApi';
 // import Player from '../Player';
@@ -43,8 +43,8 @@ const MainView = () => {
   return <Box>
     <Grid container style={{backgroundColor: backgroundColor, height: `${height}vh`}}>
       <Grid item xs={2.35} style={{ padding: paddingSize, paddingRight: paddingSize / 2, paddingLeft: paddingSize}}>
-        {/* <NavigationPaper paperColor={paperColor} paddingSize={paddingSize} height={"95%"} /> */}
-        <Box>
+        <NavigationPaper paperColor={paperColor} paddingSize={paddingSize} height={"95%"} />
+        {/* <Box>
           <Paper square={false} style={{backgroundColor: paperColor, paddingSize: paddingSize, height: `${height / 8}vh`}}>
             <Stack spacing={1}>
               <Button style={{height: "7vh", margin: 0, paddingLeft: 0, paddingRight: "60%", color: navigationButtonColor}}>
@@ -62,7 +62,7 @@ const MainView = () => {
             </Stack>
           </Paper>
           <Paper square={false} style={{backgroundColor: paperColor, paddingSize: paddingSize, height: `${height / 2.66}vh`}} />
-        </Box>
+        </Box> */}
       </Grid>
       <Grid item xs={7.3} style={{ padding: paddingSize, paddingLeft: paddingSize / 2, paddingRight: paddingSize / 2}}>
         <Paper square={false} style={{backgroundColor: paperColor, height: `100%`}}>

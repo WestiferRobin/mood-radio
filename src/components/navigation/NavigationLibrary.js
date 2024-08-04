@@ -89,7 +89,7 @@ const NavigationLibrary = ({paperColor}) => {
         </Box>
     };
 
-    return <Paper square={false} style={{height: "89%", backgroundColor: paperColor}}>
+    return <Paper square={false} style={{height: "88%", backgroundColor: paperColor}}>
         {renderDialog()}
         {renderMainToolbar()}
         {renderLibraryFilters()}
