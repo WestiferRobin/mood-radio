@@ -65,7 +65,7 @@ const MainView = () => {
         </Paper>
       </Grid>
     </Grid>
-    <Box style={{height: `${100 - height}vh`, backgroundColor: "yellow"}}>
+    <Box style={{height: `${100 - height - 1}vh`, backgroundColor: "yellow"}}>
     </Box>
   </Box>;
 };
