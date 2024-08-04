@@ -5,8 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 const NavigationHeader = ({paperColor, paddingSize}) => {
     const navigationButtonColor = "white";
 
-    return (
-    <Paper square={false} style={{backgroundColor: paperColor, marginBottom: paddingSize}}>
+    return <Paper square={false} style={{backgroundColor: paperColor, marginBottom: paddingSize}}>
         <Stack spacing={1} sx={{height: "25%"}}>
             <Button style={{height: "7vh", margin: 0, paddingLeft: 0, paddingRight: "60%", color: navigationButtonColor}}>
                 <HomeIcon style={{marginLeft: 15}}/>
@@ -21,8 +20,7 @@ const NavigationHeader = ({paperColor, paddingSize}) => {
                 </Typography>
             </Button>
         </Stack>
-    </Paper>
-  );
+    </Paper>;
 };
 
 export default NavigationHeader;
