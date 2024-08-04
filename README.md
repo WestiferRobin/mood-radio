@@ -1,4 +1,4 @@
-# Mood Radio
+# Mood Wave
 A Spotify clone that uses the Spotify, GPT, and Suno APIs to make 
 
 ## Planned Features
