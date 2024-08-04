@@ -6,7 +6,6 @@ import {
 import NavigationPaper from '../papers/NavigationPaper';
 import useMoodApi from '../../hooks/mood-library-hooks/useMoodApi';
 import useSearchApi from '../../hooks/mood-library-hooks/useSearchApi';
-import Player from '../Player';
 
 const MainView = () => {
   const backgroundColor = "black";
@@ -33,7 +32,7 @@ const MainView = () => {
           </Paper>
         </Grid>
       </Grid>
-      <Player />
+      {/* <Player /> */}
     </Box>
   );
 };
