@@ -65,7 +65,8 @@ const MainView = () => {
         </Paper>
       </Grid>
     </Grid>
-    <Player />
+    <Box style={{height: `${100 - height}vh`, backgroundColor: "yellow"}}>
+    </Box>
   </Box>;
 };
 
