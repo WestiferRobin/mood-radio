@@ -17,24 +17,24 @@ const MainView = () => {
   const { artists } = useSearchApi();
 
   return (<>
-    <Grid container style={{backgroundColor: backgroundColor}}>
+    <Grid container style={{backgroundColor: backgroundColor, height: "20vh"}}>
       <Grid item xs={2.35} style={{ padding: paddingSize, paddingRight: paddingSize / 2, paddingLeft: paddingSize}}>
-        <NavigationPaper paperColor={paperColor} paddingSize={paddingSize} height={"94%"} />
+        {/* <NavigationPaper paperColor={paperColor} paddingSize={paddingSize} height={"94%"} /> */}
       </Grid>
       <Grid item xs={7.3} style={{ padding: paddingSize, paddingLeft: paddingSize / 2, paddingRight: paddingSize / 2}}>
-        <Paper square={false} style={{height: "100%", backgroundColor: paperColor}}>
+        {/* <Paper square={false} style={{height: "100%", backgroundColor: paperColor}}>
           { user === null ? "Not Found or Loading" : `Hello ${user.username}!` }
           { artists.map((value) => <div>{value.name}</div>)}
-        </Paper>
+        </Paper> */}
       </Grid>
       <Grid item xs={2.35} style={{padding: paddingSize, paddingLeft: paddingSize / 2}}>
-        <Paper square={false} style={{height: "100%", backgroundColor: paperColor}}>
-        </Paper>
+        {/* <Paper square={false} style={{height: "100%", backgroundColor: paperColor}}>
+        </Paper> */}
       </Grid>
     </Grid>
-    <Box>
+    {/* <Box>
       <Player />
-    </Box>
+    </Box> */}
   </>);
 };
 
